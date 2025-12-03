@@ -38,4 +38,4 @@ def solver(filename: str) -> None:
             )
         }"
     )
-    print(f"Part 1: {sum(_maximiser(bank) for bank in banks)}")
+    print(f"Part 2: {sum(_maximiser(bank) for bank in banks)}")

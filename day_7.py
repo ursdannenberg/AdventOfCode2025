@@ -62,5 +62,13 @@ def solver(filename: str) -> None:
 
     # DFS as recursive function
     print(
-        f"Part 2: {_recursor(beam=(start[0], min(y for x, y in splitter if x == start[0] and y >= start[1])), splitter=splitter)}"
+        f"Part 2: {
+            _recursor(
+                beam=(
+                    start[0],
+                    min(y for x, y in splitter if x == start[0] and y >= start[1]),
+                ),
+                splitter=splitter,
+            )
+        }"
     )

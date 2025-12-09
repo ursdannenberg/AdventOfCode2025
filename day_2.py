@@ -14,7 +14,9 @@ def solver(filename: str) -> None:
         if eid[: len(eid) // 2] == eid[len(eid) // 2 :]:
             part_1 += int(eid)
         for pattern in (
-            eid[:l] for l in range(1, len(eid) // 2 + 1) if len(eid) % l == 0
+            eid[:length]
+            for length in range(1, len(eid) // 2 + 1)
+            if len(eid) % length == 0
         ):
             if eid == "".join([pattern] * (len(eid) // len(pattern))):
                 part_2 += int(eid)

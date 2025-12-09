@@ -2,6 +2,7 @@ from typing import TypeAlias
 
 
 DIRS = ((-1, -1), (-1, 0), (-1, 1), (0, -1), (0, 1), (1, -1), (1, 0), (1, 1))
+MAX_NEIGHBOURS = 4
 
 Rolls: TypeAlias = set[tuple[int, int]]
 
@@ -24,7 +25,7 @@ def _finder(rolls: Rolls) -> Rolls:
         if sum(
             tuple(r + d for r, d in zip(roll, di, strict=True)) in rolls for di in DIRS
         )
-        < 4
+        < MAX_NEIGHBOURS
     }
 
 

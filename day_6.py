@@ -13,14 +13,17 @@ def _reader(filename: str) -> tuple[list[int], ...]:
 
 def solver(filename: str) -> None:
     problems = _reader(filename)
-    part_1 = sum(
-        sum(int(number) for number in problem[1:])
-        for problem in problems
-        if problem[0] == 0
+    print(
+        f"Part 1: {
+            sum(
+                sum(int(number) for number in problem[1:])
+                for problem in problems
+                if problem[0] == 0
+            )
+            + sum(
+                math.prod(int(number) for number in problem[1:])
+                for problem in problems
+                if problem[0] == 1
+            )
+        }"
     )
-    part_1 += sum(
-        math.prod(int(number) for number in problem[1:])
-        for problem in problems
-        if problem[0] == 1
-    )
-    print(f"Part 1: {part_1}")

@@ -19,8 +19,8 @@ def _reader(filename):
 
 def solver(filename) -> None:
     machines = _reader(filename)
-    part_1, part_2 = 0, 0
-    for lights, buttons, joltages in machines:
+    part_1 = 0
+    for lights, buttons, _ in machines:
         for i, combination in (
             (i_, combination_)
             for i_ in range(len(buttons))
